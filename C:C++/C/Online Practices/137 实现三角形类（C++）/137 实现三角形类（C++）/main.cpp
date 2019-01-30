@@ -1,0 +1,47 @@
+//
+//  main.cpp
+//  137 实现三角形类（C++）
+//
+//  Created by 徐贤达 on 2016/12/27.
+//  Copyright © 2016年 徐贤达. All rights reserved.
+//
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+class Ctriangle
+{
+private:
+    double a;
+    double b;
+    double c;
+public:
+    Ctriangle(int a,int b,int c)
+    {
+        this->a=a;
+        this->b=b;
+        this->c=c;
+    }
+    double GetPerimeter()
+    {
+        return a+b+c;
+    }
+    double GetArea()
+    {
+        double p=(a+b+c)/2;
+        return sqrt(p*(p-a)*(p-b)*(p-c));
+    }
+    void display()
+    {
+        cout<<"Ctriangle:a="<<a<<",b="<<b<<",c="<<c<<endl;
+    }
+};
+int main(){
+    double a,b,c;
+    cin>>a>>b>>c;
+    Ctriangle T(a,b,c);
+    T.display();
+    cout<<"Perimeter:"<<T.GetPerimeter()<<endl;
+    cout<<"Area:"<<T.GetArea()<<endl;
+    return 0;	 
+}

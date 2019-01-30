@@ -1,0 +1,368 @@
+C51 COMPILER V9.00   MAIN                                                                  05/12/2017 22:36:39 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: D:\程序\KEIL C51\C51\BIN\C51.EXE main.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include<reg52.h>
+   2          #include <intrins.h>
+   3          #include"lcd.h"
+   4          #include"temp.h"
+   5          
+   6          //typedef unsigned char uchar;                                  //类型重定义
+   7          //typedef unsigned int uint;
+   8          
+   9          sbit key_1 = P1^0;                                      //定义按键,1：进入时间设置
+  10          sbit key_2 = P1^1;                                      //2：时间+
+  11          sbit key_3 = P1^2;                                      //3：时间-
+  12          
+  13          sbit beep = P2^0;
+  14          
+  15          sbit AD_clk = P3^4;                                     //定义ADC0832            
+  16          sbit AD_cs = P3^6; 
+  17          sbit AD_do = P3^5; 
+  18          sbit AD_di = P3^5;
+  19          
+  20          uchar RH;                                                       //定义土壤湿度变量
+  21          uchar RH_L,RH_H;                                        //定义湿度上下限
+  22          int tp;                                                         //定义温度变量
+  23          uchar xdata PuZh_1[16];
+  24          uchar xdata PuZh_2[16]; 
+  25          
+  26          void warm();                                            //报警
+  27          void set_limit();                                       //设定上下限
+  28          void Read_temp();                                       //读取温度
+  29          void display_1();                                               //显示
+  30          void set_time();                                        //设置时间
+  31          void delayms(unsigned int x);           //延时函数
+  32          uchar AD(bit Channel);                          //AD采集
+  33          //void one_data(uchar *str);
+  34          void two_data(uchar *str);
+  35          void display(void);
+  36          
+  37          void main()
+  38          {
+  39   1              LcdInit();
+  40   1              while(1)
+  41   1              {
+  42   2                      RH = ~AD(0);
+  43   2                      Read_temp();
+  44   2                      set_limit();
+  45   2                      warm();
+  46   2                      display_1();                    
+  47   2              }
+  48   1      }
+  49          /*******************************************************************************
+  50          * 函数名         : warm()
+  51          * 函数功能               : 报警
+  52          * 输入           : 无
+  53          * 输出           : 无
+  54          *******************************************************************************/
+  55          void warm()
+C51 COMPILER V9.00   MAIN                                                                  05/12/2017 22:36:39 PAGE 2   
+
+  56          {
+  57   1              if(RH_L!=0 && RH_H!=0)                                  //设置好阈值
+  58   1              {                                       
+  59   2                      if(RH>=RH_H)                            //湿度大于上限
+  60   2                      {
+  61   3                              two_data("   I am Full    ");
+  62   3                              display();
+  63   3                              beep = 1;
+  64   3                      }
+  65   2                      else if(RH<=RH_L)                       //湿度小于下限
+  66   2                      {
+  67   3                              two_data("  I need water！");
+  68   3                              display();
+  69   3                              beep = 0;       
+  70   3                      }
+  71   2                      else
+  72   2                      {
+  73   3                              two_data("  I am thirsty  ");
+  74   3                              display();
+  75   3                              beep = 1;       
+  76   3                      }
+  77   2              }       
+  78   1      }
+  79          /*******************************************************************************
+  80          * 函数名         : set_limit()
+  81          * 函数功能               : 设定工作值
+  82          * 输入           : 无
+  83          * 输出           : 无
+  84          *******************************************************************************/
+  85          void set_limit()
+  86          {
+  87   1              if(key_1 == 0)                                                                          //设置键按下
+  88   1              {
+  89   2                      delayms(10);                                                                    //延时消抖
+  90   2                      if(key_1 == 0)                                                                  //再次判断
+  91   2                      {
+  92   3                              while(key_1 == 0);
+  93   3                              LcdWriteCom(0x01);                                                      //清屏
+  94   3                              delayms(10);
+  95   3                              for(;;)                                                                         //设定温度上限
+  96   3                              {
+  97   4                                      LcdWriteCom(0x83);                                              //显示
+  98   4                                      LcdWriteData('S');
+  99   4                                      LcdWriteData('E');
+ 100   4                                      LcdWriteData('T');
+ 101   4                                      LcdWriteData('-');
+ 102   4                                      LcdWriteData('R');
+ 103   4                                      LcdWriteData('H');
+ 104   4                                      LcdWriteData(' ');
+ 105   4                                      LcdWriteData('L');
+ 106   4                                      LcdWriteCom(0xca);
+ 107   4                                      LcdWriteData(0x30+RH_L/100);
+ 108   4                                      LcdWriteData(0x30+RH_L%100/10);
+ 109   4                                      LcdWriteData(0x30+RH_L%10);
+ 110   4                                      if(key_2 == 0)                                                  //按键2按下，每按一次+5
+ 111   4                                      {
+ 112   5                                              delayms(10);
+ 113   5                                              if(key_2 == 0)
+ 114   5                                              {
+ 115   6                                                      while(key_2 == 0);
+ 116   6                                                      RH_L+=5;
+ 117   6                                                      if(RH_L>=250)
+C51 COMPILER V9.00   MAIN                                                                  05/12/2017 22:36:39 PAGE 3   
+
+ 118   6                                                              RH_L = 250;
+ 119   6                                              }
+ 120   5                                      }
+ 121   4                                      if(key_3 == 0)                                                  //按键3按下，每按一次-5
+ 122   4                                      {
+ 123   5                                              delayms(10);
+ 124   5                                              if(key_3 == 0)
+ 125   5                                              {
+ 126   6                                                      while(key_3 == 0);
+ 127   6                                                      RH_L -=5;
+ 128   6                                                      if(RH_L<=0)
+ 129   6                                                              RH_L = 0;
+ 130   6                                              }
+ 131   5                                      }
+ 132   4                                      if(key_1 == 0)                                                  //按键4按下，输入下一项
+ 133   4                                      {
+ 134   5                                              delayms(10);
+ 135   5                                              if(key_1 == 0)
+ 136   5                                              {
+ 137   6                                                      while(key_1 == 0);
+ 138   6                                                      LcdWriteCom(0x01);
+ 139   6                                                      break;
+ 140   6                                              }
+ 141   5                                      }
+ 142   4                              }
+ 143   3                              for(;;)                                                                         //设定温度下限
+ 144   3                              {
+ 145   4                                      LcdWriteCom(0x83);                                              //显示
+ 146   4                                      LcdWriteData('S');
+ 147   4                                      LcdWriteData('E');
+ 148   4                                      LcdWriteData('T');
+ 149   4                                      LcdWriteData('-');
+ 150   4                                      LcdWriteData('R');
+ 151   4                                      LcdWriteData('H');
+ 152   4                                      LcdWriteData(' ');
+ 153   4                                      LcdWriteData('H');
+ 154   4                                      LcdWriteCom(0xca);
+ 155   4                                      LcdWriteData(0x30+RH_H/100);
+ 156   4                                      LcdWriteData(0x30+RH_H%100/10);
+ 157   4                                      LcdWriteData(0x30+RH_H%10);
+ 158   4                                      if(key_2 == 0)                                                  //按键2按下，每按一次+5
+ 159   4                                      {
+ 160   5                                              delayms(10);
+ 161   5                                              if(key_2 == 0)
+ 162   5                                              {
+ 163   6                                                      while(key_2 == 0);
+ 164   6                                                      RH_H+=5;
+ 165   6                                                      if(RH_H>=250)
+ 166   6                                                              RH_H = 250;
+ 167   6                                              }
+ 168   5                                      }
+ 169   4                                      if(key_3 == 0)                                                  //按键3按下，每按一次-5
+ 170   4                                      {
+ 171   5                                              delayms(10);
+ 172   5                                              if(key_3 == 0)
+ 173   5                                              {
+ 174   6                                                      while(key_3 == 0);
+ 175   6                                                      RH_H -=5;
+ 176   6                                                      if(RH_H<=0)
+ 177   6                                                              RH_H = 0;
+ 178   6                                              }
+ 179   5                                      }
+C51 COMPILER V9.00   MAIN                                                                  05/12/2017 22:36:39 PAGE 4   
+
+ 180   4                                      if(key_1 == 0)                                                  //按键4按下，输入下一项
+ 181   4                                      {
+ 182   5                                              delayms(10);
+ 183   5                                              if(key_1 == 0)
+ 184   5                                              {
+ 185   6                                                      while(key_1 == 0);
+ 186   6                                                      LcdWriteCom(0x01);
+ 187   6                                                      break;
+ 188   6                                              }
+ 189   5                                      }
+ 190   4                              }
+ 191   3                      }
+ 192   2              }       
+ 193   1      }
+ 194          /*******************************************************************************
+ 195          * 函数名         : Read_temp()
+ 196          * 函数功能               : 读取温度
+ 197          * 输入           : 无
+ 198          * 输出           : 无
+ 199          *******************************************************************************/
+ 200          void Read_temp()
+ 201          {
+ 202   1              tp = Ds18b20ReadTemp();
+ 203   1              tp = tp/100;
+ 204   1      }
+ 205          /*************************************************************
+ 206          * 函 数 名         : display
+ 207          * 函数功能                 : 在主界面显示时间信息
+ 208          * 输    入         : 无
+ 209          * 输    出         : 无
+ 210          *************************************************************/
+ 211          void display_1()
+ 212          {
+ 213   1              LcdWriteCom(0x80);                      //温度显示
+ 214   1              LcdWriteData('T');
+ 215   1              LcdWriteData('P');
+ 216   1              LcdWriteData(':');              
+ 217   1              LcdWriteData(0x30+tp/100);
+ 218   1              LcdWriteData(0x30+tp%100/10);
+ 219   1              LcdWriteData(0x30+tp%10);
+ 220   1              LcdWriteData(0xdf);
+ 221   1              LcdWriteData('C');      
+ 222   1      
+ 223   1              LcdWriteCom(0x89);                      //温度显示
+ 224   1              LcdWriteData('R');
+ 225   1              LcdWriteData('H');
+ 226   1              LcdWriteData(' ');
+ 227   1              LcdWriteData(':');              
+ 228   1              LcdWriteData(0x30+RH/100);
+ 229   1              LcdWriteData(0x30+RH%100/10);
+ 230   1              LcdWriteData(0x30+RH%10);               
+ 231   1      }
+ 232          void delayms(unsigned int x)   //0.14ms误差 0us
+ 233          {
+ 234   1              unsigned char i;
+ 235   1              while(x--)
+ 236   1              {
+ 237   2                      for (i = 0; i<13; i++)
+ 238   2                      {}
+ 239   2              }
+ 240   1      }
+ 241          /*******************************************************************************
+C51 COMPILER V9.00   MAIN                                                                  05/12/2017 22:36:39 PAGE 5   
+
+ 242          * 函数名         : uchar AD(bit Channel)
+ 243          * 函数功能               : 采集AD值
+ 244          * 输入           : 无
+ 245          * 输出           : 无
+ 246          *******************************************************************************/
+ 247          uchar AD(bit Channel)
+ 248          {
+ 249   1              unsigned char i;
+ 250   1              unsigned char ad0,ad1;
+ 251   1              ad0 = 0x00;
+ 252   1              ad1 = 0x00;
+ 253   1      
+ 254   1              AD_cs = 0;
+ 255   1              _nop_();
+ 256   1              AD_clk=0;
+ 257   1              _nop_();
+ 258   1              AD_di=1;
+ 259   1              _nop_();
+ 260   1              AD_clk=1;          ////输入开始信号（构成一个正脉冲）,时钟上升沿，输入开始信号 
+ 261   1                      
+ 262   1              //单通道0~10.  1~11  双通道 0+~00 。0—~01
+ 263   1              AD_clk=0;
+ 264   1              AD_di=1;   //选择单通道
+ 265   1              AD_clk=1;  
+ 266   1              _nop_(); 
+ 267   1              AD_clk=0; 
+ 268   1              AD_di=Channel;    //选择通道
+ 269   1      
+ 270   1              //通道选择完毕
+ 271   1              AD_clk=1;
+ 272   1              _nop_();
+ 273   1              AD_clk=0;
+ 274   1              _nop_();
+ 275   1              AD_di=1;                
+ 276   1      
+ 277   1              for(i=8;i>0;i--)
+ 278   1              {
+ 279   2                      AD_clk=1;
+ 280   2                      ad0<<=1;
+ 281   2                      AD_clk=0;
+ 282   2                      if(AD_do)
+ 283   2                              ad0 |= 0x01;
+ 284   2                      else
+ 285   2                              ad0     |= 0x00;        
+ 286   2              }
+ 287   1              for(i=8;i>0;i--)
+ 288   1              {       
+ 289   2                      ad1>>=1;                   ////从低位向高位读取八位AD值 
+ 290   2                      AD_clk=0;
+ 291   2                      if(AD_do)
+ 292   2                              ad1 |= 0x80;
+ 293   2                      else
+ 294   2                              ad1     |= 0x00;
+ 295   2                      AD_clk=1;       
+ 296   2              }
+ 297   1              AD_cs = 1;
+ 298   1              AD_do = 1;
+ 299   1              AD_clk = 1;
+ 300   1              if(ad0 == ad1)            //判断是否采集正确
+ 301   1              {
+ 302   2                      return ad1;
+ 303   2              }
+C51 COMPILER V9.00   MAIN                                                                  05/12/2017 22:36:39 PAGE 6   
+
+ 304   1              return -1;
+ 305   1      }
+ 306          //void one_data(uchar *str)                             //显示第一行数据
+ 307          //{
+ 308          //      unsigned char y;
+ 309          //      for(y=0;y<16;y++)
+ 310          //      {
+ 311          //              PuZh_1[y]=*str;
+ 312          //              str++;
+ 313          //      }
+ 314          //}
+ 315          void two_data(uchar *str)                               //显示第一行数据
+ 316          {
+ 317   1              unsigned char y;
+ 318   1              for(y=0;y<16;y++)
+ 319   1              {
+ 320   2                      PuZh_2[y]=*str;
+ 321   2                      str++;
+ 322   2              }
+ 323   1      }
+ 324          void display(void)
+ 325          {
+ 326   1              unsigned char i;
+ 327   1      
+ 328   1      //      LcdWriteCom(0x80); //设置坐标在第一行
+ 329   1      //      for(i=0;i<16;i++)
+ 330   1      //              LcdWriteData(PuZh_1[i]);        
+ 331   1              LcdWriteCom(0xC0); //设置坐标在第二行
+ 332   1              for(i=0;i<16;i++)
+ 333   1                      LcdWriteData(PuZh_2[i]);
+ 334   1      }
+ 335          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    815    ----
+   CONSTANT SIZE    =     51    ----
+   XDATA SIZE       =     32    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      5       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----       1
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

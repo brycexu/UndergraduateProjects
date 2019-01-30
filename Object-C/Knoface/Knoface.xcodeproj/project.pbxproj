@@ -1,0 +1,548 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1702F09320B15A1900BD9361 /* Yellow.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1702F09220B15A1800BD9361 /* Yellow.wav */; };
+		1773C66920971A87002A7F6A /* selectBack.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1773C66820971A86002A7F6A /* selectBack.jpg */; };
+		1773C66B20971F91002A7F6A /* controllerBack.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1773C66A20971F91002A7F6A /* controllerBack.jpg */; };
+		1773C66D20972F22002A7F6A /* doorBellBack.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1773C66C20972F22002A7F6A /* doorBellBack.jpg */; };
+		17A2134F20F4F0D500A2F502 /* song.wav in Resources */ = {isa = PBXBuildFile; fileRef = 17A2134E20F4F0D500A2F502 /* song.wav */; };
+		17A2135120F5045A00A2F502 /* Maps.wav in Resources */ = {isa = PBXBuildFile; fileRef = 17A2135020F5045A00A2F502 /* Maps.wav */; };
+		17A88C532096D78D0030975E /* PeripheralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A88C522096D78D0030975E /* PeripheralViewController.m */; };
+		17A88C8E2096D99A0030975E /* BabyToy.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A88C7E2096D99A0030975E /* BabyToy.m */; };
+		17A88C8F2096D99A0030975E /* BabyOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A88C832096D99A0030975E /* BabyOptions.m */; };
+		17A88C902096D99A0030975E /* BabyCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A88C842096D99A0030975E /* BabyCallback.m */; };
+		17A88C912096D99A0030975E /* BabyPeripheralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A88C852096D99A0030975E /* BabyPeripheralManager.m */; };
+		17A88C922096D99A0030975E /* BabyCentralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A88C862096D99A0030975E /* BabyCentralManager.m */; };
+		17A88C932096D99A0030975E /* BabySpeaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A88C872096D99A0030975E /* BabySpeaker.m */; };
+		17A88C942096D99A0030975E /* BabyRhythm.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A88C892096D99A0030975E /* BabyRhythm.m */; };
+		17A88C952096D99A0030975E /* BabyBluetooth.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A88C8B2096D99A0030975E /* BabyBluetooth.m */; };
+		17A88C962096D99A0030975E /* BabyDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A88C8C2096D99A0030975E /* BabyDefine.m */; };
+		17A88CA62096D9B40030975E /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A88CA32096D9B40030975E /* SVProgressHUD.m */; };
+		17A88CA72096D9B40030975E /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A88CA42096D9B40030975E /* SVIndefiniteAnimatedView.m */; };
+		17A88CA82096D9B40030975E /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 17A88CA52096D9B40030975E /* SVProgressHUD.bundle */; };
+		17A88CAB2096E3140030975E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A88CAA2096E3140030975E /* QuartzCore.framework */; };
+		17A88CB02096E9970030975E /* sea.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 17A88CAF2096E9970030975E /* sea.jpg */; };
+		17A88CB22096ED340030975E /* PeripheralViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17A88CB12096ED340030975E /* PeripheralViewController.xib */; };
+		17A88CB62096EEAF0030975E /* doorBellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A88CB42096EEAF0030975E /* doorBellViewController.m */; };
+		17A88CB72096EEAF0030975E /* doorBellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17A88CB52096EEAF0030975E /* doorBellViewController.xib */; };
+		17A88CBB2096EECC0030975E /* controllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A88CB92096EECC0030975E /* controllViewController.m */; };
+		17A88CBC2096EECC0030975E /* controllViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17A88CBA2096EECC0030975E /* controllViewController.xib */; };
+		17A88CBF2096FE190030975E /* PeripheralInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A88CBE2096FE190030975E /* PeripheralInfo.m */; };
+		17BAF946207A429E00086901 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 17BAF945207A429E00086901 /* main.m */; };
+		17BAF949207A429E00086901 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17BAF948207A429E00086901 /* AppDelegate.m */; };
+		17BAF94C207A429E00086901 /* BXMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17BAF94B207A429E00086901 /* BXMainViewController.m */; };
+		17BAF94F207A429E00086901 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17BAF94D207A429E00086901 /* Main.storyboard */; };
+		17BAF951207A429E00086901 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17BAF950207A429E00086901 /* Assets.xcassets */; };
+		17BAF954207A429E00086901 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17BAF952207A429E00086901 /* LaunchScreen.storyboard */; };
+		17BAF95E207A470600086901 /* launchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17BAF95D207A470600086901 /* launchViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1702F09220B15A1800BD9361 /* Yellow.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Yellow.wav; sourceTree = "<group>"; };
+		1773C66820971A86002A7F6A /* selectBack.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = selectBack.jpg; sourceTree = "<group>"; };
+		1773C66A20971F91002A7F6A /* controllerBack.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = controllerBack.jpg; sourceTree = "<group>"; };
+		1773C66C20972F22002A7F6A /* doorBellBack.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = doorBellBack.jpg; sourceTree = "<group>"; };
+		17A2134E20F4F0D500A2F502 /* song.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = song.wav; sourceTree = "<group>"; };
+		17A2135020F5045A00A2F502 /* Maps.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Maps.wav; sourceTree = "<group>"; };
+		17A88C512096D78D0030975E /* PeripheralViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PeripheralViewController.h; sourceTree = "<group>"; };
+		17A88C522096D78D0030975E /* PeripheralViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PeripheralViewController.m; sourceTree = "<group>"; };
+		17A88C7C2096D99A0030975E /* BabyRhythm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyRhythm.h; sourceTree = "<group>"; };
+		17A88C7D2096D99A0030975E /* BabySpeaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabySpeaker.h; sourceTree = "<group>"; };
+		17A88C7E2096D99A0030975E /* BabyToy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabyToy.m; sourceTree = "<group>"; };
+		17A88C7F2096D99A0030975E /* BabyCentralManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyCentralManager.h; sourceTree = "<group>"; };
+		17A88C802096D99A0030975E /* BabyPeripheralManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyPeripheralManager.h; sourceTree = "<group>"; };
+		17A88C812096D99A0030975E /* BabyDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyDefine.h; sourceTree = "<group>"; };
+		17A88C822096D99A0030975E /* BabyBluetooth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyBluetooth.h; sourceTree = "<group>"; };
+		17A88C832096D99A0030975E /* BabyOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabyOptions.m; sourceTree = "<group>"; };
+		17A88C842096D99A0030975E /* BabyCallback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabyCallback.m; sourceTree = "<group>"; };
+		17A88C852096D99A0030975E /* BabyPeripheralManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabyPeripheralManager.m; sourceTree = "<group>"; };
+		17A88C862096D99A0030975E /* BabyCentralManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabyCentralManager.m; sourceTree = "<group>"; };
+		17A88C872096D99A0030975E /* BabySpeaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabySpeaker.m; sourceTree = "<group>"; };
+		17A88C882096D99A0030975E /* BabyToy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyToy.h; sourceTree = "<group>"; };
+		17A88C892096D99A0030975E /* BabyRhythm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabyRhythm.m; sourceTree = "<group>"; };
+		17A88C8A2096D99A0030975E /* BabyOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyOptions.h; sourceTree = "<group>"; };
+		17A88C8B2096D99A0030975E /* BabyBluetooth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabyBluetooth.m; sourceTree = "<group>"; };
+		17A88C8C2096D99A0030975E /* BabyDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabyDefine.m; sourceTree = "<group>"; };
+		17A88C8D2096D99A0030975E /* BabyCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyCallback.h; sourceTree = "<group>"; };
+		17A88CA12096D9B40030975E /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		17A88CA22096D9B40030975E /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		17A88CA32096D9B40030975E /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		17A88CA42096D9B40030975E /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		17A88CA52096D9B40030975E /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		17A88CAA2096E3140030975E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		17A88CAF2096E9970030975E /* sea.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sea.jpg; sourceTree = "<group>"; };
+		17A88CB12096ED340030975E /* PeripheralViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PeripheralViewController.xib; sourceTree = "<group>"; };
+		17A88CB32096EEAF0030975E /* doorBellViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = doorBellViewController.h; sourceTree = "<group>"; };
+		17A88CB42096EEAF0030975E /* doorBellViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = doorBellViewController.m; sourceTree = "<group>"; };
+		17A88CB52096EEAF0030975E /* doorBellViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = doorBellViewController.xib; sourceTree = "<group>"; };
+		17A88CB82096EECC0030975E /* controllViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = controllViewController.h; sourceTree = "<group>"; };
+		17A88CB92096EECC0030975E /* controllViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = controllViewController.m; sourceTree = "<group>"; };
+		17A88CBA2096EECC0030975E /* controllViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = controllViewController.xib; sourceTree = "<group>"; };
+		17A88CBE2096FE190030975E /* PeripheralInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PeripheralInfo.m; sourceTree = "<group>"; };
+		17A88CC02096FE310030975E /* PeripheralInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PeripheralInfo.h; sourceTree = "<group>"; };
+		17BAF941207A429E00086901 /* Knoface.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Knoface.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		17BAF945207A429E00086901 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		17BAF947207A429E00086901 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		17BAF948207A429E00086901 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		17BAF94A207A429E00086901 /* BXMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BXMainViewController.h; sourceTree = "<group>"; };
+		17BAF94B207A429E00086901 /* BXMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BXMainViewController.m; sourceTree = "<group>"; };
+		17BAF94E207A429E00086901 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		17BAF950207A429E00086901 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		17BAF953207A429E00086901 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		17BAF955207A429E00086901 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17BAF95C207A470600086901 /* launchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = launchViewController.h; sourceTree = "<group>"; };
+		17BAF95D207A470600086901 /* launchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = launchViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		17BAF93E207A429E00086901 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17A88CAB2096E3140030975E /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		170AB992209702880004CE5E /* DoorBell */ = {
+			isa = PBXGroup;
+			children = (
+				17A88CB32096EEAF0030975E /* doorBellViewController.h */,
+				17A88CB42096EEAF0030975E /* doorBellViewController.m */,
+				17A88CB52096EEAF0030975E /* doorBellViewController.xib */,
+			);
+			name = DoorBell;
+			sourceTree = "<group>";
+		};
+		170AB993209702990004CE5E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				17A88CB82096EECC0030975E /* controllViewController.h */,
+				17A88CB92096EECC0030975E /* controllViewController.m */,
+				17A88CBA2096EECC0030975E /* controllViewController.xib */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		17A1F8DD2097024000C5858C /* Select */ = {
+			isa = PBXGroup;
+			children = (
+				17A88C512096D78D0030975E /* PeripheralViewController.h */,
+				17A88C522096D78D0030975E /* PeripheralViewController.m */,
+				17A88CB12096ED340030975E /* PeripheralViewController.xib */,
+			);
+			name = Select;
+			sourceTree = "<group>";
+		};
+		17A88C7B2096D99A0030975E /* BabyBluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				17A88C7C2096D99A0030975E /* BabyRhythm.h */,
+				17A88C7D2096D99A0030975E /* BabySpeaker.h */,
+				17A88C7E2096D99A0030975E /* BabyToy.m */,
+				17A88C7F2096D99A0030975E /* BabyCentralManager.h */,
+				17A88C802096D99A0030975E /* BabyPeripheralManager.h */,
+				17A88C812096D99A0030975E /* BabyDefine.h */,
+				17A88C822096D99A0030975E /* BabyBluetooth.h */,
+				17A88C832096D99A0030975E /* BabyOptions.m */,
+				17A88C842096D99A0030975E /* BabyCallback.m */,
+				17A88C852096D99A0030975E /* BabyPeripheralManager.m */,
+				17A88C862096D99A0030975E /* BabyCentralManager.m */,
+				17A88C872096D99A0030975E /* BabySpeaker.m */,
+				17A88C882096D99A0030975E /* BabyToy.h */,
+				17A88C892096D99A0030975E /* BabyRhythm.m */,
+				17A88C8A2096D99A0030975E /* BabyOptions.h */,
+				17A88C8B2096D99A0030975E /* BabyBluetooth.m */,
+				17A88C8C2096D99A0030975E /* BabyDefine.m */,
+				17A88C8D2096D99A0030975E /* BabyCallback.h */,
+			);
+			path = BabyBluetooth;
+			sourceTree = "<group>";
+		};
+		17A88CA02096D9B40030975E /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				17A88CA12096D9B40030975E /* SVIndefiniteAnimatedView.h */,
+				17A88CA22096D9B40030975E /* SVProgressHUD.h */,
+				17A88CA32096D9B40030975E /* SVProgressHUD.m */,
+				17A88CA42096D9B40030975E /* SVIndefiniteAnimatedView.m */,
+				17A88CA52096D9B40030975E /* SVProgressHUD.bundle */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		17A88CA92096E3140030975E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				17A88CAA2096E3140030975E /* QuartzCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		17A88CAC2096E6F30030975E /* Materials */ = {
+			isa = PBXGroup;
+			children = (
+				17A88CAF2096E9970030975E /* sea.jpg */,
+				1773C66820971A86002A7F6A /* selectBack.jpg */,
+				1773C66A20971F91002A7F6A /* controllerBack.jpg */,
+				1773C66C20972F22002A7F6A /* doorBellBack.jpg */,
+				1702F09220B15A1800BD9361 /* Yellow.wav */,
+				17A2134E20F4F0D500A2F502 /* song.wav */,
+				17A2135020F5045A00A2F502 /* Maps.wav */,
+			);
+			path = Materials;
+			sourceTree = "<group>";
+		};
+		17A88CBD2096FDEB0030975E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				17A88CC02096FE310030975E /* PeripheralInfo.h */,
+				17A88CBE2096FE190030975E /* PeripheralInfo.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		17A88CC1209701F10030975E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				17BAF947207A429E00086901 /* AppDelegate.h */,
+				17BAF948207A429E00086901 /* AppDelegate.m */,
+				17BAF94A207A429E00086901 /* BXMainViewController.h */,
+				17BAF94B207A429E00086901 /* BXMainViewController.m */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		17BAF938207A429E00086901 = {
+			isa = PBXGroup;
+			children = (
+				17A88CAC2096E6F30030975E /* Materials */,
+				17A88CA02096D9B40030975E /* SVProgressHUD */,
+				17A88C7B2096D99A0030975E /* BabyBluetooth */,
+				17BAF943207A429E00086901 /* Knoface */,
+				17BAF942207A429E00086901 /* Products */,
+				17A88CA92096E3140030975E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		17BAF942207A429E00086901 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				17BAF941207A429E00086901 /* Knoface.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		17BAF943207A429E00086901 /* Knoface */ = {
+			isa = PBXGroup;
+			children = (
+				170AB993209702990004CE5E /* Controller */,
+				170AB992209702880004CE5E /* DoorBell */,
+				17A1F8DD2097024000C5858C /* Select */,
+				17A88CC1209701F10030975E /* Main */,
+				17A88CBD2096FDEB0030975E /* Model */,
+				17BAF95B207A46CE00086901 /* LaunchView */,
+				17BAF952207A429E00086901 /* LaunchScreen.storyboard */,
+				17BAF94D207A429E00086901 /* Main.storyboard */,
+				17BAF950207A429E00086901 /* Assets.xcassets */,
+				17BAF955207A429E00086901 /* Info.plist */,
+				17BAF944207A429E00086901 /* Supporting Files */,
+			);
+			path = Knoface;
+			sourceTree = "<group>";
+		};
+		17BAF944207A429E00086901 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				17BAF945207A429E00086901 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		17BAF95B207A46CE00086901 /* LaunchView */ = {
+			isa = PBXGroup;
+			children = (
+				17BAF95C207A470600086901 /* launchViewController.h */,
+				17BAF95D207A470600086901 /* launchViewController.m */,
+			);
+			name = LaunchView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		17BAF940207A429E00086901 /* Knoface */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17BAF958207A429E00086901 /* Build configuration list for PBXNativeTarget "Knoface" */;
+			buildPhases = (
+				17BAF93D207A429E00086901 /* Sources */,
+				17BAF93E207A429E00086901 /* Frameworks */,
+				17BAF93F207A429E00086901 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Knoface;
+			productName = Knoface;
+			productReference = 17BAF941207A429E00086901 /* Knoface.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		17BAF939207A429E00086901 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Bryce_Xu;
+				TargetAttributes = {
+					17BAF940207A429E00086901 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = S5LH4839SW;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 17BAF93C207A429E00086901 /* Build configuration list for PBXProject "Knoface" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 17BAF938207A429E00086901;
+			productRefGroup = 17BAF942207A429E00086901 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				17BAF940207A429E00086901 /* Knoface */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		17BAF93F207A429E00086901 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1773C66920971A87002A7F6A /* selectBack.jpg in Resources */,
+				17BAF954207A429E00086901 /* LaunchScreen.storyboard in Resources */,
+				17A2134F20F4F0D500A2F502 /* song.wav in Resources */,
+				17BAF951207A429E00086901 /* Assets.xcassets in Resources */,
+				17A88CB72096EEAF0030975E /* doorBellViewController.xib in Resources */,
+				1773C66B20971F91002A7F6A /* controllerBack.jpg in Resources */,
+				17A88CB22096ED340030975E /* PeripheralViewController.xib in Resources */,
+				1702F09320B15A1900BD9361 /* Yellow.wav in Resources */,
+				17A88CB02096E9970030975E /* sea.jpg in Resources */,
+				17BAF94F207A429E00086901 /* Main.storyboard in Resources */,
+				17A88CA82096D9B40030975E /* SVProgressHUD.bundle in Resources */,
+				17A88CBC2096EECC0030975E /* controllViewController.xib in Resources */,
+				1773C66D20972F22002A7F6A /* doorBellBack.jpg in Resources */,
+				17A2135120F5045A00A2F502 /* Maps.wav in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		17BAF93D207A429E00086901 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17A88CBF2096FE190030975E /* PeripheralInfo.m in Sources */,
+				17A88C962096D99A0030975E /* BabyDefine.m in Sources */,
+				17BAF94C207A429E00086901 /* BXMainViewController.m in Sources */,
+				17A88CB62096EEAF0030975E /* doorBellViewController.m in Sources */,
+				17A88CA62096D9B40030975E /* SVProgressHUD.m in Sources */,
+				17A88C942096D99A0030975E /* BabyRhythm.m in Sources */,
+				17BAF949207A429E00086901 /* AppDelegate.m in Sources */,
+				17A88C952096D99A0030975E /* BabyBluetooth.m in Sources */,
+				17A88C8F2096D99A0030975E /* BabyOptions.m in Sources */,
+				17BAF946207A429E00086901 /* main.m in Sources */,
+				17A88C912096D99A0030975E /* BabyPeripheralManager.m in Sources */,
+				17A88C902096D99A0030975E /* BabyCallback.m in Sources */,
+				17A88C532096D78D0030975E /* PeripheralViewController.m in Sources */,
+				17A88CA72096D9B40030975E /* SVIndefiniteAnimatedView.m in Sources */,
+				17A88C8E2096D99A0030975E /* BabyToy.m in Sources */,
+				17A88C932096D99A0030975E /* BabySpeaker.m in Sources */,
+				17BAF95E207A470600086901 /* launchViewController.m in Sources */,
+				17A88C922096D99A0030975E /* BabyCentralManager.m in Sources */,
+				17A88CBB2096EECC0030975E /* controllViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		17BAF94D207A429E00086901 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17BAF94E207A429E00086901 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		17BAF952207A429E00086901 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17BAF953207A429E00086901 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		17BAF956207A429E00086901 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		17BAF957207A429E00086901 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		17BAF959207A429E00086901 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = S5LH4839SW;
+				INFOPLIST_FILE = Knoface/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Bryce-Xu.Knoface";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		17BAF95A207A429E00086901 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = S5LH4839SW;
+				INFOPLIST_FILE = Knoface/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Bryce-Xu.Knoface";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		17BAF93C207A429E00086901 /* Build configuration list for PBXProject "Knoface" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17BAF956207A429E00086901 /* Debug */,
+				17BAF957207A429E00086901 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		17BAF958207A429E00086901 /* Build configuration list for PBXNativeTarget "Knoface" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17BAF959207A429E00086901 /* Debug */,
+				17BAF95A207A429E00086901 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 17BAF939207A429E00086901 /* Project object */;
+}
